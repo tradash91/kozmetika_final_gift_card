@@ -1,0 +1,296 @@
+[
+  {
+    "category": "Head Spa Fusion",
+    "img": "/images/head_spa_premium.jpg",
+
+    "subCategories": [
+      {
+        "name": "Basic head spa kezelés",
+        "description": "Belépő a head spa világába: frissítő kényeztetés a fejbőrnek, hogy új erőre kapjon a hajad és a lelked.",
+        "duration": 65,
+        "price": 18900,
+        "details": [
+          "Konzultáció, haj és fejbőr állapotfelmérés",
+          "Relaxáló fejmasszázs speciális eszközökkel",
+          "Kényeztető Joico sampon-balzsam rituálé",
+          "Arc letisztítása + peeling",
+          "Janssen Cosmetics hidratáló arcmaszk",
+          "Hajszárítás 20 perc"
+        ]
+      },
+      {
+        "name": "Comfort Head spa kezelés",
+        "description": "Mélykényeztető élmény a teljes ellazulásért – itt a feszültségnek nincs helye.",
+        "duration": 80,
+        "price": 26900,
+        "details": [
+          "Konzultáció haj és fejbőr állapotfelmérés",
+          "Relaxáló fejmasszázs speciális eszközökkel",
+          "Kényeztető Joico sampon-balzsam rituálé",
+          "Arc letisztítása + peeling",
+          "Janssen Cosmetics hidratáló maszk",
+          "Revitalizáló arc és dekoltázs masszázs",
+          "LED fényterápia",
+          "Hajszárítás, tápláló hajolaj 20 perc"
+        ]
+      },
+      {
+        "name": "Exclusive Head Spa kezelés",
+        "description": "Luxus élmény, amely a hajadnak, fejbőrödnek és az arcodnak is királynői törődést ad.",
+        "duration": 110,
+        "price": 39900,
+        "details": [
+          "Kozultáció haj és fejbőr állapotfelmérés",
+          "Relaxáló fejmasszázs speciális eszközökkel",
+          "Kényeztető Joico sampon-balzsam rituálé",
+          "Arc letisztítása + peeling",
+          "Bőrtípusnak megfelelő ampulla/ szérum",
+          "Elektrokozmetikai kezelés",
+          "Szemkörnyékmasszázs",
+          "Janssen Cosmetics hidratáló maszk",
+          "Fiatalító Arc és dekoltázs masszázs, svéd pontmasszázzsal kiegészítve",
+          "LED fény terápia",
+          "Hajszárítás, tápláló hajolaj 20 perc"
+        ]
+      },
+      {
+        "name": "Head Spa SCALP VITALITY",
+        "description": "A Joico Scalp Vitality termékcsaládot a fejbőr egészségének megőrzésére és helyreállítására fejlesztették ki, különösen azok számára, akik különböző fejbőrproblémákkal küzdenek.",
+        "duration": 50,
+        "price": 25000,
+        "details": [
+          "Kozultáció haj és fejbőr állapotfelmérés",
+          "Joico 3 lépéses fejbőr detox kezelés",
+          "Relaxáló fejmasszázs speciális eszközökkel",
+          "Janssen Cosmetics Detox black bubble arcmaszk",
+          "Hajszárítás 20 perc"
+        ]
+      }
+    ]
+  },
+
+  {
+    "category": "Skin Rehab ",
+    "img": "/images/kozmetikamasszazs.jpg",
+    "subCategories": [
+      {
+        "name": "CLASSIC tisztításos arckezelés",
+        "description": "Engedd, hogy bőröd fellélegezzen, és élvezd azt az önbizalmat, amit a ragyogó megjelenés ad!",
+        "duration": 90,
+        "price": 18000,
+        "details": [
+          "helyspecifikus tápláló pakolások (3)",
+          "összehúzó maszk",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "PRÉMIUM tisztitás érzékeny bőrre",
+        "description": "Nem kell választanod hatékonyság és gyengédség között! Prémium kezelésünkkel bőröd tiszta, nyugodt és sugárzó lesz – akkor is, ha érzékeny.",
+        "duration": 120,
+        "price": 25000,
+        "details": [
+          "Lemosás",
+          "enzimes peeling",
+          "felpuhító borogatás",
+          "tonik",
+          "masszázs 20perc",
+          "tisztítás",
+          "gépi hatóanyag bejuttatás (ampulla/szérum)",
+          "helyspecifikus tápláló pakolás (3)",
+          "LED fényterápia",
+          "összehúzó maszk",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "C-vitaminos antioxidáns arckezelés 30+",
+        "description": "Frissesség és ragyogás minden bőrnek 30 év felett. A hatóanyagok célzottan védik a bőrt a szabad gyökök káros hatásaival szemben,fokozzák a kollagéntermelést, javítják a bőr textúráját és tónusát.",
+        "duration": 90,
+        "price": 20000,
+        "details": [
+          "Lemosás",
+          "peeling",
+          "tonik",
+          "gépi hatóanyag bejuttatás (ampulla/szérum)",
+          "helyspecifikus tápláló pakolás (3)",
+          "masszázs 20perc",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "Kaviáros anti-aging kezelés 40+",
+        "description": "Prémium élményre vágyik bőrének? Kifejezetten a fáradt, igénybe vett, alacsony energiaszintű bőr revitalizálására szolgál.",
+        "duration": 90,
+        "price": 25000,
+        "details": [
+          "Lemosás",
+          "peeling",
+          "tonik",
+          "gépi hatóanyag bejuttatás (ampulla/szérum)",
+          "szemkörnyék ápló & krémmaszk",
+          "liftmasszázs 20perc",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "Mélyhidratáló HYALURON kezelés",
+        "description": "Olyan, mintha a bőröd végre megkapná, amire régóta vágyott. Frissülj fel egy intenzív hidratáló arckezeléssel, amely segít feltölteni bőröd nedvességtartalmát",
+        "duration": 90,
+        "price": 20000,
+        "details": [
+          "Lemosás",
+          "peeling",
+          "tonik",
+          "gépi hatóanyag bejuttatás (ampulla/szérum)",
+          "helyspecifikus tápláló pakolás (3)",
+          "masszázs 20perc",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "DETOX arckezelés",
+        "description": "A kúra ápolja a bőrt, gyönyörű kinézetűvé teszi kezelés után is a kinézet fokozott frissességet és vitalitást mutat.",
+        "duration": 90,
+        "price": 20000,
+        "details": [
+          "Lemosás",
+          "detox maszk",
+          "tonik",
+          "gépi hatóanyag bejuttatás (ampulla)",
+          "helyspecifikus tápláló pakolás (3)",
+          "masszázs 20perc",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "Érzékeny, rosaceára hajlamos bőr kezelése",
+        "description": "A gyönyörű bőr nem csak álom többé. Ez a kezelés segít megnyugtatni a bőröd, csökkenti a kipirosodást és támogatja a természetes egyensúly visszanyerését.",
+        "duration": 90,
+        "price": 20000,
+        "details": [
+          "Lemosás",
+          "enzimes peeling",
+          "tonik",
+          "gépi hatóanyag bejuttatás (ampulla/szérum)",
+          "algamaszk",
+          "svéd pontmasszázs 20perc",
+          "zárókrém",
+          "tanácsadás"
+        ]
+      },
+      {
+        "name": "Pigmentfolt halványító kezelés",
+        "description": "Konzuláció szükséges az első kezelés előtt! Látványosan halványítja a pigmentfoltokat, a bőr visszanyeri egyenletes színét. Az eredmény: ragyogó, makulátlan arcbőr.",
+        "duration": 90,
+        "price": 25000,
+        "details": []
+      }
+    ]
+  },
+  {
+    "category": "Konzultáció",
+    "img": "/images/konzultacio.jpg",
+    "subCategories": [
+      {
+        "name": "Konzultáció",
+        "description": "Most ajándék 10 perces arcmasszázzsal!Egy kozmetikai konzultáció során felmérem a vendég bőrtípusát, bőrproblémáit ésigényeit, majd személyre szabott tanácsokat és kezelési javaslatokat adok a megfelelő ápolás és termékhasználat érdekében. Ideális, ha nem tudod melyik kezelést válaszd!",
+        "duration": 30,
+        "price": 6000,
+        "details": []
+      }
+    ]
+  },
+  {
+    "category": "Wellness Svéd testmasszázs",
+    "img": "/images/masszazs.jpg",
+    "subCategories": [
+      {
+        "name": "Express hát-váll-nyak",
+        "description": "Felfrissülésre vágyik a mindennapok rohanásában? Az Express hát-váll-nyak masszázs segít ellazulni és megpihenni. Ez a kezelés kifejezetten a hát, váll és nyak területére összpontosít, így gyorsan érezheti a törődés erejét. Ideális választás, ha rövid idő alatt szeretne feltöltődni.",
+        "duration": 35,
+        "price": 7500,
+        "details": []
+      },
+      {
+        "name": "Express hát-váll-nyak köpölyözéssel",
+        "description": "Köpölyözéssel a letapadt izmok ellen!Ez a kezelés kifejezetten a hát, váll és nyak területére összpontosít, így búcsút inthet a stressznek és a fáradtságnak.",
+        "duration": 50,
+        "price": 11000,
+        "details": []
+      },
+      {
+        "name": "Relax Teljes test",
+        "description": "Engedd, hogy tested teljesen ellazuljon egy pihentető, teljes testmasszázs során. Professzionális svéd testmasszázs mozdulatok segítenek a mindennapi feszültség oldásában, miközben kellemes, nyugodt környezet vár. Frissülj fel kívül-belül, és tapasztald meg a teljes kikapcsolódás élményét!",
+        "duration": 60,
+        "price": 15000,
+        "details": []
+      },
+      {
+        "name": "Lávaköves masszázs",
+        "description": "A meleg kövek simogató hője mélyen ellazít, miközben az aromaterápia nyugtatja érzékeidet. A lávaköves masszázs gyengéd érintései oldják a feszültséget, segítenek lelassulni, és harmonikus élményt nyújtanak a hétköznapok után.",
+        "duration": 45,
+        "price": 13000,
+        "details": []
+      }
+    ]
+  },
+  {
+    "category": "Kozmetikai masszázs",
+    "img": "/images/Depositphotos_144136023_L_converter.jpg",
+    "subCategories": [
+      {
+        "name": "Express Relaxáló arcmasszázs",
+        "description": "Egy kellemes arcmasszázs gyorsan feltölt és felfrissít a sűrű napokon. Ideális,ha rövid idő alatt szeretnéd átélni a kényeztetés örömét. Néha a kicsi is sokat számíta bőröd egészségéért.",
+        "duration": 30,
+        "price": 9000,
+        "details": [
+          "Fokozza a vérkeringést",
+          "Segíti a nyirokkeringést",
+          "Csökkenti az ödémát",
+          "Lazítja az arc izmait",
+          "Enyhíti a stresszt és feszültséget",
+          "Javítja a bőr tónusát, rugalmasságát",
+          "Serkenti a kollagéntermelést",
+          "Elősegíti a bőr regenerálódását",
+          "Frissíti és ragyogóvá teszi a bőrt",
+          "Segíti a hatóanyagok felszívódását"
+        ]
+      },
+      {
+        "name": "Bőfiatalító arcemelő izommasszázs",
+        "description": "Garantáltan látható változás már az első kezelés után! Kombinált anti aging kezeléssel a bőrfiatalító hatás fokozása érdekében!",
+        "duration": 45,
+        "price": 17000,
+        "details": []
+      },
+      {
+        "name": "Relax Hairplay fej és vállmasszázs",
+        "description": "Engedd, hogy a mindennapi stressz elillanjon egy pihentető fej- és vállmasszázs közben. A finom érintések segítenek ellazulni, miközben a kellemes hajsimítás tovább fokozza a nyugalmat. Tökéletes választás, ha felfrissülésre és harmóniára vágysz. Eszközökkel, olajjjal végzett masszázs. Csak tiszta fejbőrön elvégezhető szolgáltatás! Ha nincs idő otthon hajat mosni válaszd pluszban az express hajmosás szolgáltatásom!",
+        "duration": 50,
+        "price": 14000,
+        "details": []
+      },
+      {
+        "name": "Svéd pontmasszázs",
+        "description": "A legérzékenyebb bőröknek is jár a kényeztetés! Engedd, hogy tested és lelked teljesen ellazuljon egy pihentető masszázs során ahol az arc idegeire hatunk. A svéd pontmasszázs segít az idegrendszer megnyugtatásában, mélyrelaxációt biztosít, és támogatja a belső egyensúly helyreállítását. Kérhető eszközzel is.",
+        "duration": 35,
+        "price": 9500,
+        "details": []
+      },
+      {
+        "name": "Gua Sha nyirokmasszázs",
+        "description": "Ajándék hyaluron feltöltő hidratáló ampullával! Ints búcsút a puffadt arcnak! A Gua Sha köves nyirokmasszázs során gyengéd, kőalapú masszázstechnikát alkalmazunk, amely segíthet ellazítani az arcbőrt, támogatni a természetes megújulást és hozzájárulni a harmonikus közérzethez.Ideális választás, ha szeretné felfrissíteni bőrét és relaxálni.",
+        "duration": 30,
+        "price": 15000,
+        "details": []
+      }
+    ]
+  }
+]

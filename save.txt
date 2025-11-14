@@ -1,0 +1,121 @@
+ <>
+      <SectionTitle heading={"Amit kínálunk"}>Amit kínálunk</SectionTitle>
+      <ServicesSection>
+        <SectionDecoration>
+          <GalleryModal />
+          {open && (
+            <SwiperWrapper>
+              <StyledSwiper
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                modules={[Navigation, Pagination]}
+                navigation={{ nextEl: ".next-btn", prevEl: ".prev-btn" }}
+                pagination={{ type: "progressbar" }}
+                spaceBetween={30}
+                slidesPerView={1}
+                initialSlide={targetIndex}
+                onSlideChange={(swiper) => {
+                  const newIndex = swiper.activeIndex;
+                  setCurrentIndex(newIndex);
+                  setsubCategory(data[newIndex].subCategories[0]);
+                }}
+              >
+                {data.map((item, index) => {
+                  return (
+                    <StyledSwiperSlide key={index}>
+                      <div className="">
+                        <h3>{subCategory.name}</h3>
+                        <p>{subCategory.description}</p>
+                        <span>{subCategory.price}</span>
+                        <br />
+                        <span>{subCategory.duration}</span>
+                        <ul>
+                          {subCategory.details.map((detail, index) => (
+                            <li key={index}>{detail}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {item.subCategories && (
+                        <ul>
+                          {item.subCategories.map((sub, index) => {
+                            return (
+                              <React.Fragment key={index}>
+                                <li
+                                  onClick={() => {
+                                    setsubCategory(sub);
+
+                                    /* console.log(subCategory); */
+                                  }}
+                                >
+                                  {sub.name}
+                                </li>
+                              </React.Fragment>
+                            );
+                          })}
+                        </ul>
+                      )}
+                      <CloseBtn onClick={handleCloseModal}>X</CloseBtn>
+                    </StyledSwiperSlide>
+                  );
+                })}
+                <button
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: 0,
+                    zIndex: 10,
+                  }}
+                  onClick={() => {
+                    if (swiperRef.current) swiperRef.current.slidePrev();
+                    if (currentIndex > 0) {
+                      setsubCategory(data[currentIndex - 1].subCategories[0]);
+                      setCurrentIndex(currentIndex - 1);
+                    }
+                  }}
+                >
+                  ⬅️
+                </button>
+                <button
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    right: 0,
+                    zIndex: 10,
+                  }}
+                  onClick={() => {
+                    if (swiperRef.current) swiperRef.current.slideNext();
+                    console.log(data.length);
+                    if (currentIndex < data.length - 1) {
+                      setsubCategory(data[currentIndex + 1].subCategories[0]);
+                      console.log(currentIndex);
+                      setCurrentIndex(currentIndex + 1);
+                    }
+                  }}
+                >
+                  ➡️
+                </button>
+              </StyledSwiper>
+            </SwiperWrapper>
+          )}
+
+          <StyledServices>
+            {data.map((serviceData, index) => {
+              return (
+                <Card
+                  key={index}
+                  $bg={serviceData.img}
+                  onClick={() => {
+                    setTargetIndex(index);
+                    setOpen(true);
+                    setsubCategory(data[index].subCategories[0]);
+                    setCurrentIndex(index);
+                  }}
+                >
+                  <CardCategory>{data.category}</CardCategory>
+                </Card>
+              );
+            })}
+          </StyledServices>
+        </SectionDecoration>
+      </ServicesSection>
+    </>
