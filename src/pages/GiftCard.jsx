@@ -1,16 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import LoadingPage from "./LoadingPage";
 import { getServices, getServicesForGiftCard } from "../api/services";
 import { h3, select } from "motion/react-client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Arrow from "/images/arrow_icon.svg";
 ///Motion
 import { motion } from "framer-motion";
 import {
   StyledCardWrapper,
   StyledData,
+  StyledFinishBuy,
   StyledGiftCard,
   StyledGiftCardBackground,
   StyledOption,
@@ -18,6 +19,7 @@ import {
   StyledSelect,
 } from "./giftcard.styles";
 import Select from "../components/Select";
+import { sendGiftCardComfim } from "../api/giftCard";
 
 function GiftCard() {
   const [isPersonalChecked, setIsPersonalChecked] = useState(false);
@@ -27,6 +29,16 @@ function GiftCard() {
   const [giftCardBGURL, setGiftCardBgURL] = useState(null);
   const [giftCardBG, setGiftCardBG] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [step,setStep] = useState(1)
+  useEffect(() => {
+  const script = document.createElement("script");
+  script.src = `https://www.google.com/recaptcha/api.js?render=${import.meta.env.VITE_RECAPTCHA_SITE_KEY}`;
+  script.async = true;
+  document.body.appendChild(script);
+  
+  
+}, []);
+
   const [buyerData,setBuyerData] = useState({
     name:'',
     email:"",
@@ -34,27 +46,31 @@ function GiftCard() {
     city:"",
     zip:"",
     street:"",
-    delivery:""
+    delivery:"",
+    
   })
   const { isLoading: isServicesLoading, data: servicesData } = useQuery({
     queryFn: getServicesForGiftCard,
     queryKey: ["getServicesForGiftCard"],
   });
 
-  function handleSetBuyerData(prop){
-      setBuyerData({...buyerData,prop})
-  }
-
-  if (isServicesLoading) return <LoadingPage />;
+const {isPending:isSendingConfimEmail,mutate:sendConfirmEmail} = useMutation({
+  mutationFn: sendGiftCardComfim
  
-console.log(buyerData);
+})
+
+  if (isServicesLoading || isSendingConfimEmail) return <LoadingPage />;
+ 
+console.log(service,step);
+
+
 
   return (
     <>
       <Navbar />
 
       <main>
-        <StyledCardWrapper style={{ marginTop: "10rem" }} className="">
+         {step === 1 && <StyledCardWrapper style={{ marginTop: "10rem" }} className="">
           <StyledData>
             <h3>Szolgáltatás</h3>
             {servicesData.map((service, index) => {
@@ -174,22 +190,19 @@ console.log(buyerData);
               <p className="text2">12 hónapig érvényes.</p>
             </div>
           </StyledGiftCard>
-          <button onClick={ async ()=>{
-            await fetch("https://ddvnuqohudlphhbsdtzg.supabase.co/functions/v1/rapid-handler",{
-          method:"POST",
-          headers:{"content-type":"application/json"},
-          body:JSON.stringify({
-            name: buyerData.name,
-            email: buyerData.email,
-            phone: buyerData.phone,
-            city: buyerData.city,
-            zip: buyerData.zip,
-            street: buyerData.street,
-            delivery: buyerData.delivery,
-          })
-        })
-          }} >TESZT</button>
-        </StyledCardWrapper>
+          <button onClick={ async ()=>{         
+              /* sendConfirmEmail(buyerData) */
+              setStep((step)=> step < 2 ? step + 1 : step)
+          }} >Tovább</button>
+        </StyledCardWrapper>}
+        {step === 2 && <StyledFinishBuy>
+          <button onClick={()=>{setStep((step)=> step -= 1)}} >Vissza</button>
+          teszt
+        </StyledFinishBuy>}
+       {/*  {service && <div>
+          <h1>{service?.name}</h1>
+          <h1>{service?.price} Forint</h1>
+          </div>} */}
       </main>
       <Footer />
     </>
@@ -198,30 +211,4 @@ console.log(buyerData);
 
 export default GiftCard;
 
-{
-  /*   <div className="form">
-              {servicesData.map((service, index) => {
-                return (
-                  <div key={service.id}>
-                    <h3>{service.name}</h3>
-                    <select
-                      onChange={(e) => {
-                        if (e.target.value === "-") return;
-                        const parsed = JSON.parse(e.target.value);
-                        console.log(parsed);
-                      }}
-                    >
-                      <option>-</option>
-                      {service.sub_categories.map((subcat, index) => {
-                        return (
-                          <option key={index} value={JSON.stringify(subcat)}>
-                            {subcat.name}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                );
-              })}
-            </div> */
-}
+

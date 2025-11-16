@@ -191,3 +191,10 @@ export const StyledGiftCardBackground = styled.div`
     }
   }
 `;
+
+
+export const StyledFinishBuy = styled.div`
+
+background-color: red;
+
+`
