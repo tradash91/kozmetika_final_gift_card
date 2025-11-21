@@ -7,7 +7,7 @@ import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs
 
 const StyledNav = styled.nav`
   img {
-    width: 100px;
+    width: 130px;
   }
 
   height: 80px;
@@ -51,19 +51,19 @@ const StyledNavUl = styled.ul`
     }
   }
 
-  @media (max-width: 1022px) {
+  @media (max-width: 1222px) {
     position: absolute;
-    z-index: 999999999;
+    z-index: 100;
     top: 0;
     right: 0;
     flex-direction: column;
-    background: var(--white);
     padding: 1rem 2rem;
     width: 80%;
     height: 100dvh;
-    background-color: var(--white);
-    gap: 2rem;
+    background-color: #ffffff;
+    gap: 2.4rem;
     display: ${({ $open }) => ($open ? "flex" : "none")};
+    font-size: 1.8rem;
   }
 `;
 

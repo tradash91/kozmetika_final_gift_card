@@ -8,7 +8,7 @@ export const Hamburger = styled.div`
   position: relative;
   z-index: 9999999;
 
-  @media (max-width: 1022px) {
+  @media (max-width: 1222px) {
     display: block;
     z-index: 9999999;
   }

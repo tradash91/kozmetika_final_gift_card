@@ -260,7 +260,7 @@ function GiftCard() {
                   </label>
                 </div>
               </div>
-              <button>Tovább</button>
+             
             </StyledData>
 
             <StyledGiftCard className="gift-card">
@@ -293,17 +293,8 @@ function GiftCard() {
             </StyledGiftCard>
           </StyledCardWrapper>
         )}
-        {step === 2 && (
-          <StyledFinishBuy>
-            <h1>Köszönjük a megrendeléses</h1>
-            <p>
-              A megerősítő emailt elküldtük az alábbi email címre:
-              {buyerData.email}
-            </p>
-          </StyledFinishBuy>
-        )}
-        {/* {service?.name && service?.price && buyerData?.name && buyerData?.email && buyerData?.phone && buyerData?.city && buyerData?.zip && buyerData?.street && buyerData?.delivery} */}
-        <StyledOrderData className="orderData">
+       
+        {step === 1 && <StyledOrderData className="orderData">
           <div className="personal">
             <div className="row">
               <p className="title">Név:</p>
@@ -334,17 +325,19 @@ function GiftCard() {
             <div className="row">
               <p className="title">Kézbesítés módja:</p>
               <p>
-                {buyerData?.delivery === "személyes" ? "Személyes" : "Postai"}
+                {buyerData?.delivery === "személyes" && "Személyes"}
+                {buyerData?.delivery === "posta" && "Postai"}
               </p>
             </div>
           </div>
           <div className="service">
             <div className="row">
-              <p>Szolgáltatás:</p>
+               
+
               <p>{service?.name} </p>
             </div>
             <div className="row">
-              <p>Ár:</p>
+              
               <p>
                 {service?.price} {service?.price && "Forint"}
               </p>
@@ -359,7 +352,22 @@ function GiftCard() {
           >
             Megrendelés
           </button>
-        </StyledOrderData>
+        </StyledOrderData>}
+         {step === 2 && (
+          <StyledFinishBuy> 
+            <div className="textWrapper">
+
+                <h1>Köszönjük a megrendelésed!</h1>
+            <p>
+              A megerősítő emailt elküldtük az alábbi email címre:
+              <br />
+              {buyerData.email}
+              
+            </p>
+            </div>
+          
+          </StyledFinishBuy>
+        )}
       </StyledGiftCardMain>
       <Footer />
     </>

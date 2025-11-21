@@ -7,7 +7,7 @@ const StyledBrandSection = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  height: 500px;
+  min-height: 500px;
   width: 100%;
   margin: 5rem 0 5rem 0;
 

@@ -6,10 +6,10 @@ const GlobalStyles = createGlobalStyle`
 
  :root {
   
---brown:#DCC29C;
---white:#F2EFEB;
+--brown: #DCC29C;
+--white: #F2EFEB;
 --black: #3D362F;
---grey:#5E5E5E;
+--grey: #5E5E5E;
 --text-black:#3D362F;
 --purple:#BC0E88;
 --active: #ebda8dff;

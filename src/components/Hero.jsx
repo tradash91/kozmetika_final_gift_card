@@ -24,15 +24,11 @@ export const HeroHeading = styled.h1`
 `;
 export const HeroSection = styled.section`
   color: var(--text-black);
-  height: 100dvh;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.03)),
+  min-height: 100dvh;
+  
+    background: linear-gradient(0deg, rgba(255, 254, 254, 0.418), rgba(255, 255, 255, 0.03)),
     url(${(props) => props.$bg});
-  /* background: linear-gradient(
-      0deg,
-      rgba(255, 254, 254, 0.315),
-      rgba(0, 0, 0, 0.03)
-    ),
-    url(${(props) => props.$bg}); */
+  
   background-position: 0% 13%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -71,6 +67,7 @@ export const HeroWrapper = styled.div`
 export const HeroSubtitle = styled.h3`
   ${cormorant_18_medium}
   text-align: center;
+  
 
   @media (min-width: 1000px) {
     ${cormorant_24_regular}
