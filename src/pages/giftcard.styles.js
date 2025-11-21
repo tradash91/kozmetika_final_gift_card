@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import { flex } from "../styles/GlobalStyles";
 import { motion } from "framer-motion";
+export const StyledGiftCardMain = styled.main`
+  color: var(--text-black);
+  .errorMessage {
+    color: var(--red);
+    font-weight: 600;
+    font-size: 15px;
+  }
+`;
+
 export const StyledCardWrapper = styled.div`
   display: grid;
   grid-template-columns: 4fr 6fr;
@@ -8,14 +17,22 @@ export const StyledCardWrapper = styled.div`
   font-family: "montserrat", Reddit Sans;
   padding: 0 5rem;
   height: 800px;
+  .orderBtn {
+    background-color: var(--green);
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
 `;
 
 export const StyledData = styled.div`
   ${flex("column")}
   gap: 1rem;
   align-items: start;
-  font-size: 18px;
-
+  font-size: 17px;
+  h3 {
+    font-weight: 500;
+  }
   .form {
     ${flex("column")}
     align-items: start;
@@ -29,23 +46,29 @@ export const StyledData = styled.div`
   .buyer-data {
     align-self: stretch;
     h3 {
-      font-weight: 600;
+      font-weight: 500;
     }
     form {
       ${flex("column")}
       align-items: start;
       gap: 1rem;
-      
-      
-      input {
+
+      /*     input {
         align-self: stretch;
         border-radius: 2px;
         border: 1px solid #c4c0c0ff;
-        padding:0.5rem 1rem
-      }
-
+        padding: 0.5rem 1rem;
+      } */
     }
   }
+`;
+
+export const StyledFormInput = styled.input`
+  align-self: stretch;
+  border-radius: 2px;
+  /* border: 1px solid #c4c0c0ff; */
+  border: ${({ $border }) => $border};
+  padding: 0.5rem 1rem;
 `;
 
 export const StyledSelect = styled.div`
@@ -55,7 +78,8 @@ export const StyledSelect = styled.div`
   gap: 1rem;
   width: 90%;
   padding: 0.5rem 1rem;
-  border: 1px solid #c4c0c0ff;
+  /* border: 1px solid #c4c0c0ff; */
+  border: ${({ $border }) => $border};
   color: var(--text-black);
   cursor: pointer;
   border-radius: 5px;
@@ -74,6 +98,8 @@ export const StyledOptionWrapper = styled(motion.div)`
 `;
 
 export const StyledOption = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   background-color: #e4e1e1ff;
   font-size: 16px;
   width: 100%;
@@ -187,14 +213,52 @@ export const StyledGiftCardBackground = styled.div`
       text-align: center;
     }
     .siteAddress {
-      font-size: 22px;
+      font-size: 19px;
     }
   }
 `;
 
-
 export const StyledFinishBuy = styled.div`
+  background-color: red;
+`;
 
-background-color: red;
-
-`
+export const StyledOrderData = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+  font-size: 18px;
+  padding: 5rem;
+  margin-top: 5rem;
+  background-color: #e4e1e1ff;
+  .personal {
+    ${flex("column")}
+    justify-items: start;
+    align-items: start;
+    gap: 2rem;
+    .row {
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid #c4c0c0ff;
+      width: 80%;
+      .title {
+        font-weight: 300;
+      }
+    }
+  }
+  .service {
+    .row {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .orderBtn {
+    grid-column: 1/3;
+    background-color: red;
+    font-size: 18px;
+    justify-self: center;
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1rem 5rem;
+    border-radius: 2px;
+  }
+`;

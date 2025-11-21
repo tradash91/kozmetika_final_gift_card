@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import ASZF from "./pages/ASZF";
 import Gallery from "./pages/Gallery";
 import GiftCard from "./pages/GiftCard";
+import ConfirmOrder from "./pages/ConfirmOrder";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -31,6 +32,7 @@ function App() {
             <Route path="ASZF" element={<ASZF />} />
             <Route path="galéria" element={<Gallery />} />
             <Route path="ajandek" element={<GiftCard />} />
+            <Route path="megerosites" element={<ConfirmOrder />} />
           </Routes>
         </BrowserRouter>
       </AppContext.Provider>

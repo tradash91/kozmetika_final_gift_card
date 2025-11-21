@@ -14,7 +14,8 @@ const GlobalStyles = createGlobalStyle`
 --purple:#BC0E88;
 --active: #ebda8dff;
 --dark-brown: #9E8563;
-
+--green: #3fd63fff;
+--red: #fa3131ff;
   
   /* Gradients */
   --light-gradient: linear-gradient(180deg,#F5F5FF 72.99%, #E0E0FF 100%);

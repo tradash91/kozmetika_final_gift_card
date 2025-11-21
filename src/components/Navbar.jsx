@@ -53,6 +53,7 @@ const StyledNavUl = styled.ul`
 
   @media (max-width: 1022px) {
     position: absolute;
+    z-index: 999999999;
     top: 0;
     right: 0;
     flex-direction: column;
@@ -61,7 +62,7 @@ const StyledNavUl = styled.ul`
     width: 80%;
     height: 100dvh;
     background-color: var(--white);
-    gap: 5rem;
+    gap: 2rem;
     display: ${({ $open }) => ($open ? "flex" : "none")};
   }
 `;
