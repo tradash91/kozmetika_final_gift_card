@@ -33,6 +33,9 @@ const StyledGallerySection = styled.section`
       "img_07 img_07"
       "img_08 img_09";
   }
+  @media (max-width:550px) {
+    padding: 0 2rem 2rem 2rem;
+  }
   .img_01 {
     grid-area: img_01;
     background-color: #3e98e7;
@@ -83,12 +86,18 @@ function Gallery() {
     queryKey: ["getSettings"],
   });
 
+  function handleOpenLightbox(e) {
+              const index = e.currentTarget.dataset.index
+             setIndex(Number(index));
+             setOpen(true);
+  }
+
   if (isBlogPostsLoading) return <LoadingPage />;
 
   return (
     <div>
       <Navbar blogData={blogData} />
-      <button
+      {/* <button
         type="button"
         onClick={() => {
           setIndex(1);
@@ -96,7 +105,7 @@ function Gallery() {
         }}
       >
         Open Lightbox
-      </button>
+      </button> */}
 
       <Lightbox
         index={index}
@@ -115,7 +124,8 @@ function Gallery() {
           <SectionTitle heading={"Galéria"}>Galéria</SectionTitle>
 
           <StyledGallerySection>
-            <div className="img_01"></div>
+            <div data-index ='1' onClick={
+             (e)=>{handleOpenLightbox(e)}} className="img_01"></div>
             <div className="img_02"></div>
             <div className="img_03"></div>
             <div className="img_04"></div>

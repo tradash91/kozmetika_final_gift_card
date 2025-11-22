@@ -10,7 +10,7 @@ export const Hamburger = styled.div`
 
   @media (max-width: 1222px) {
     display: block;
-    z-index: 9999999;
+    z-index: 9999;
   }
 
   div {

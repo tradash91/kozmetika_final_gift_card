@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { flex, mont_16_regular, mont_25_light } from "../styles/GlobalStyles";
+import { flex, mont_16_regular, mont_20_light, mont_25_light } from "../styles/GlobalStyles";
 import SectionTitle from "./SectionTitle";
 import { filterContacts, filterData, filterSocial } from "../utils/filterData";
-import { li } from "motion/react-client";
+
 
 const StyledContactsWrapper = styled.section`
   display: grid;
@@ -19,7 +19,7 @@ const StyledMap = styled.div`
   height: 100%;
 `;
 const StyledOpeningHours = styled.ul`
-  ${mont_25_light}
+  ${mont_20_light}
   text-transform: uppercase;
   li {
     ${flex("row")}
@@ -41,6 +41,7 @@ const StyledContacts = styled.div`
 `;
 const StyledAddress = styled.ul`
   ${mont_16_regular}
+  padding: 1rem;
 `;
 const StyledSocial = styled.div`
   ${flex("row")}
@@ -82,16 +83,10 @@ function Contacts({ socialData, openingHoursData, contactsData }) {
                 </li>
               );
             })}
-            {/* <li>Hétfő: {data?.openingHours.hétfő}</li>
-            <li>Kedd: {data?.openingHours.kedd}</li>
-            <li>Szerda: {data?.openingHours.szerda}</li>
-            <li>Csütörtök: {data?.openingHours.csütörtök}</li>
-            <li>Péntek:{data?.openingHours.péntek}</li>
-            <li>Szombat: {data?.openingHours.szombat}</li>
-            <li>Vasárnap: {data?.openingHours.vasárnap}</li> */}
+            
           </StyledOpeningHours>
           <StyledAddress>
-            <li>Cím: {address}</li>
+            <li> Cím: {address}</li>
             <li>Telefon: {phone}</li>
             <li>Email: {email}</li>
           </StyledAddress>

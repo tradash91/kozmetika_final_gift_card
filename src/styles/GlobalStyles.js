@@ -198,6 +198,12 @@ export const mont_20_medium = css`
   font-family: "Montserrat", sans-serif;
 `;
 
+export const mont_20_light = css`
+  font-size: 20px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+`;
+
 export const mont_25_light = css`
   font-size: 25px;
   font-weight: 300;

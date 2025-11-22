@@ -6,9 +6,12 @@ import { supabase } from "../utils/supabase";
 import { useMutation } from "@tanstack/react-query";
 import LoadingPage from "./LoadingPage";
 import { useState } from "react";
+import { flex } from "../styles/GlobalStyles";
 const StyledConfimMain = styled.main`
   height: 100dvh;
   background-color: var(--white);
+  ${flex('column')}
+  text-align: center;
   button {
     background-color: var(--green);
     font-size: 18px;
@@ -16,7 +19,14 @@ const StyledConfimMain = styled.main`
     color: var(--white);
   }
   h2 {
+   
+  }
+  .orderError {
     color: var(--red);
+  }
+  .orderDetails {
+    ${flex('column')}
+    gap: 3rem;
   }
 `;
 
@@ -56,20 +66,25 @@ function ConfirmOrder() {
     <>
       <Navbar />
       <StyledConfimMain>
-        <div className="">
-          <h1>Megrendelés azonosítója {order_id}</h1>
+       {step === 1 && !error?.message &&<div className="orderDetails">
+          <h1>Megrendelés azonosítója <strong>{order_id}</strong> </h1>
           <button
             onClick={async () => {
               mutate(order_id);
-              console.log("kész");
+             
             }}
           >
             Megerősítés
           </button>
-        </div>
+        </div>}
+         {step === 2 && <div className="">
+          <h2>A vásárlás befejezéséhez kérlek utald át az email üzenetben feltüntetett összeget az alábbi számlaszámra:</h2>
+          <h3>Deák-Takács Nóra</h3>
+          <h3>432432 432432 432432432</h3>
+        </div>}
         {error?.message && (
-          <div className="">
-            <h2>{error?.message}</h2>
+          <div >
+            <h1 className="orderError" >{error?.message}</h1>
           </div>
         )}
       </StyledConfimMain>

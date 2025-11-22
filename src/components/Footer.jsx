@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   gap: 3rem;
   padding: 5rem 0;
   width: 100%;
- /*  margin-top: 5rem; */
+  margin-top: 5rem;
   span {
     ${mont_12_regular}
   }
@@ -38,11 +38,14 @@ const StyledNavFooter = styled.nav`
 
 const LogosWrapper = styled.div`
   ${flex("row")}
+  img {
+    width: 200px;
+  }
   @media (max-width:620px) {
     ${flex("column")}
     gap:3rem;
     img {
-      width: 70%;
+      width: 140px;
     }
   }
 `;

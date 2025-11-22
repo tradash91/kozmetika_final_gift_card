@@ -77,11 +77,12 @@ function GiftCard() {
   if (isServicesLoading || isSendingConfimEmail) return <LoadingPage />;
 
   console.log(error?.message);
-  console.log(service);
+  console.log(buyerData);
   return (
     <>
       <Navbar />
       <StyledGiftCardMain>
+        <p>Vásárolj egy szolgáltatást és ad át szerettednek ajándékba.</p>
         {step === 1 && (
           <StyledCardWrapper className="">
             <StyledData>
@@ -344,6 +345,9 @@ function GiftCard() {
                 <p>
                   {service?.price} {service?.price && "Forint"}
                 </p>
+                <span>{buyerData?.delivery === "posta" && "+"}</span>
+                <p>{buyerData?.delivery === "posta" && "990 Szállítási költség" }</p>
+
               </div>
             </div>
 
@@ -364,7 +368,8 @@ function GiftCard() {
               <p>
                 A megerősítő emailt elküldtük az alábbi email címre:
                 <br />
-                {buyerData.email}
+                <strong>{buyerData.email}</strong>
+                
               </p>
             </div>
           </StyledFinishBuy>
