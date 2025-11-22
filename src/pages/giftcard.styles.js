@@ -3,7 +3,7 @@ import { flex } from "../styles/GlobalStyles";
 import { motion } from "framer-motion";
 export const StyledGiftCardMain = styled.main`
   color: var(--text-black);
-  padding-top:5rem ;
+  padding-top: 5rem;
   .errorMessage {
     color: var(--red);
     font-weight: 600;
@@ -18,11 +18,11 @@ export const StyledCardWrapper = styled.div`
   font-family: "montserrat", Reddit Sans;
   padding: 0 5rem;
   height: 800px;
- @media (max-width:700px) {
-  grid-template-columns: 1fr;
-  height: auto;
-  padding: 1rem;
- }
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 1rem;
+  }
   .orderBtn {
     background-color: var(--green);
     &:disabled {
@@ -58,7 +58,6 @@ export const StyledData = styled.div`
       ${flex("column")}
       align-items: start;
       gap: 1rem;
-
     }
   }
 `;
@@ -86,7 +85,7 @@ export const StyledSelect = styled.div`
   img {
     width: 15px;
   }
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;
@@ -119,9 +118,9 @@ export const StyledGiftCard = styled.div`
   column-gap: 2rem;
   font-family: "playfair display", Reddit Sans;
 
- @media (max-width:1188px) {
-     grid-template-columns:1fr ;
-     }
+  @media (max-width: 1188px) {
+    grid-template-columns: 1fr;
+  }
 
   -webkit-box-shadow: 6px 8px 4px -6px rgba(0, 0, 0, 0.79);
   -moz-box-shadow: 10px 8px 4px -6px rgba(0, 0, 0, 0.79);
@@ -148,10 +147,9 @@ export const StyledGiftCard = styled.div`
         transform: translateX(-50%);
       }
     }
-     @media (max-width:1188px) {
-     display: none;
-
-     }
+    @media (max-width: 1188px) {
+      display: none;
+    }
   }
 
   .fromTo {
@@ -196,9 +194,9 @@ export const StyledGiftCardBackground = styled.div`
   transition: all 0.5s ease;
   color: #ffffffff;
   ${flex("column")}
-@media (max-width:700px) {
-  height:300px;;
-}
+  @media (max-width:700px) {
+    height: 300px;
+  }
   .inner {
     background-color: #3b3a3aad;
     height: 90%;
@@ -206,27 +204,25 @@ export const StyledGiftCardBackground = styled.div`
     ${flex("column")};
     justify-content: flex-end;
     gap: 4rem;
-    @media (max-width:700px)  {
-      gap:1rem;
-     
+    @media (max-width: 700px) {
+      gap: 1rem;
     }
     h1 {
       font-size: 60px;
       line-height: 1;
-        @media (max-width:700px) {
-          font-size:30px;
-          br {
-            display:none;
-          }
-  
-       }
+      @media (max-width: 700px) {
+        font-size: 30px;
+        br {
+          display: none;
+        }
+      }
     }
     .decoration {
       width: 50px;
       height: 5px;
       background-color: white;
-      @media (max-width:700px) {
-        height:3px;
+      @media (max-width: 700px) {
+        height: 3px;
       }
     }
     .innerWrapper {
@@ -249,20 +245,19 @@ export const StyledGiftCardBackground = styled.div`
 export const StyledFinishBuy = styled.div`
   /* background-color: var(--green); */
   height: 100dvh;
-  ${flex('column')}
+  ${flex("column")}
   background-color: var(--white);
-  
- 
+
   h1 {
     text-align: center;
-    @media(max-width:700px) {
+    @media (max-width: 700px) {
       font-size: 35px;
     }
   }
-   p {
+  p {
     text-align: center;
     line-height: 3;
-    @media(max-width:700px) {
+    @media (max-width: 700px) {
       font-size: 18px;
       line-height: 1.4;
     }
@@ -277,13 +272,12 @@ export const StyledOrderData = styled.div`
   padding: 5rem;
   margin-top: 5rem;
   background-color: #e4e1e1ff;
-  @media (max-width:700px) {
-  ${flex('column')}
-  align-items: stretch;
-  row-gap: 5rem;
-  
- }
- 
+  @media (max-width: 700px) {
+    ${flex("column")}
+    align-items: stretch;
+    row-gap: 5rem;
+  }
+
   .personal {
     ${flex("column")}
     justify-items: start;
@@ -300,11 +294,11 @@ export const StyledOrderData = styled.div`
     }
   }
   .service {
-    ${flex('column')}
+    ${flex("column")}
     font-weight: 500;
     .row {
-      ${flex('column')}
-      
+      ${flex("column")}
+
       gap: 1rem;
       font-size: 22px;
     }

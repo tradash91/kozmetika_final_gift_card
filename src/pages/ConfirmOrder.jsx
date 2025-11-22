@@ -5,18 +5,30 @@ import { useLocation } from "react-router-dom";
 import { supabase } from "../utils/supabase";
 import { useMutation } from "@tanstack/react-query";
 import LoadingPage from "./LoadingPage";
+import { useState } from "react";
 const StyledConfimMain = styled.main`
   height: 100dvh;
+  background-color: var(--white);
+  button {
+    background-color: var(--green);
+    font-size: 18px;
+    padding: 1rem 3rem;
+    color: var(--white);
+  }
+  h2 {
+    color: var(--red);
+  }
 `;
 
 function ConfirmOrder() {
   const { search } = useLocation();
   const params = new URLSearchParams(search);
+  const [step, setStep] = useState(1);
 
   const order_id = params.get("code");
   console.log(order_id);
 
-  const { isPending, mutate, error } = useMutation({
+  const { isPending, mutate, error, data } = useMutation({
     mutationFn: async (order_id) => {
       const res = await fetch(
         "https://ddvnuqohudlphhbsdtzg.supabase.co/functions/v1/confirm_order",
@@ -26,32 +38,43 @@ function ConfirmOrder() {
           body: JSON.stringify({ order_id }),
         }
       );
-      console.log(res);
+
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.error);
       }
       return data;
     },
+    onSuccess: () => {
+      setStep(2);
+    },
   });
 
   if (isPending) return <LoadingPage />;
+  console.log(data);
   return (
-    <StyledConfimMain>
-      <h1>{error?.message}</h1>
+    <>
       <Navbar />
-      <h1>confirm order</h1>
-      <button
-        onClick={async () => {
-          mutate(order_id);
-
-          console.log("kész");
-        }}
-      >
-        Megerősítés
-      </button>
+      <StyledConfimMain>
+        <div className="">
+          <h1>Megrendelés azonosítója {order_id}</h1>
+          <button
+            onClick={async () => {
+              mutate(order_id);
+              console.log("kész");
+            }}
+          >
+            Megerősítés
+          </button>
+        </div>
+        {error?.message && (
+          <div className="">
+            <h2>{error?.message}</h2>
+          </div>
+        )}
+      </StyledConfimMain>
       <Footer />
-    </StyledConfimMain>
+    </>
   );
 }
 

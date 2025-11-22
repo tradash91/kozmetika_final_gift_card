@@ -151,6 +151,7 @@ function GiftCard() {
                 <form>
                   <h3>Vevő adatai</h3>
                   <StyledFormInput
+                    defaultValue={buyerData.name}
                     $border={
                       error?.message && buyerData.name === ""
                         ? "1px solid var(--red)"
@@ -163,6 +164,7 @@ function GiftCard() {
                     placeholder="Név"
                   />
                   <StyledFormInput
+                    defaultValue={buyerData.email}
                     $border={
                       error?.message && buyerData.email === ""
                         ? "1px solid var(--red)"
@@ -175,6 +177,7 @@ function GiftCard() {
                     placeholder="Email cím"
                   />
                   <StyledFormInput
+                    defaultValue={buyerData.phone}
                     $border={
                       error?.message && buyerData.phone === ""
                         ? "1px solid var(--red)"
@@ -183,10 +186,11 @@ function GiftCard() {
                     onChange={(e) => {
                       setBuyerData({ ...buyerData, phone: e.target.value });
                     }}
-                    type="text"
+                    type="number"
                     placeholder="Telefonszám"
                   />
                   <StyledFormInput
+                    defaultValue={buyerData.zip}
                     $border={
                       error?.message && buyerData.zip === ""
                         ? "1px solid var(--red)"
@@ -195,10 +199,11 @@ function GiftCard() {
                     onChange={(e) => {
                       setBuyerData({ ...buyerData, zip: e.target.value });
                     }}
-                    type="text"
+                    type="number"
                     placeholder="Irányítószám"
                   />
                   <StyledFormInput
+                    defaultValue={buyerData.city}
                     $border={
                       error?.message && buyerData.city === ""
                         ? "1px solid var(--red)"
@@ -211,6 +216,7 @@ function GiftCard() {
                     placeholder="Város"
                   />
                   <StyledFormInput
+                    defaultValue={buyerData.street}
                     $border={
                       error?.message && buyerData.street === ""
                         ? "1px solid var(--red)"
@@ -219,7 +225,7 @@ function GiftCard() {
                     onChange={(e) => {
                       setBuyerData({ ...buyerData, street: e.target.value });
                     }}
-                    type="text"
+                    type="number"
                     placeholder="Utca / házszám"
                   />
                 </form>
@@ -260,7 +266,6 @@ function GiftCard() {
                   </label>
                 </div>
               </div>
-             
             </StyledData>
 
             <StyledGiftCard className="gift-card">
@@ -293,79 +298,75 @@ function GiftCard() {
             </StyledGiftCard>
           </StyledCardWrapper>
         )}
-       
-        {step === 1 && <StyledOrderData className="orderData">
-          <div className="personal">
-            <div className="row">
-              <p className="title">Név:</p>
-              <p>{buyerData?.name}</p>
+
+        {step === 1 && (
+          <StyledOrderData className="orderData">
+            <div className="personal">
+              <div className="row">
+                <p className="title">Név:</p>
+                <p>{buyerData?.name}</p>
+              </div>
+              <div className="row">
+                <p className="title">Email cím:</p>
+                <p>{buyerData?.email}</p>
+              </div>
+
+              <div className="row">
+                <p className="title">Telefonszám:</p>
+                <p>{buyerData?.phone}</p>
+              </div>
+              <div className="row">
+                <p className="title">Irányítószám:</p>
+                <p>{buyerData?.zip}</p>
+              </div>
+              <div className="row">
+                <p className="title">Város:</p>
+                <p>{buyerData?.city}</p>
+              </div>
+
+              <div className="row">
+                <p className="title">Utca/házszám:</p>
+                <p>{buyerData?.street}</p>
+              </div>
+              <div className="row">
+                <p className="title">Kézbesítés módja:</p>
+                <p>
+                  {buyerData?.delivery === "személyes" && "Személyes"}
+                  {buyerData?.delivery === "posta" && "Postai"}
+                </p>
+              </div>
             </div>
-            <div className="row">
-              <p className="title">Email cím:</p>
-              <p>{buyerData?.email}</p>
+            <div className="service">
+              <div className="row">
+                <p>{service?.name} </p>
+              </div>
+              <div className="row">
+                <p>
+                  {service?.price} {service?.price && "Forint"}
+                </p>
+              </div>
             </div>
 
-            <div className="row">
-              <p className="title">Telefonszám:</p>
-              <p>{buyerData?.phone}</p>
-            </div>
-            <div className="row">
-              <p className="title">Irányítószám:</p>
-              <p>{buyerData?.zip}</p>
-            </div>
-            <div className="row">
-              <p className="title">Város:</p>
-              <p>{buyerData?.city}</p>
-            </div>
-
-            <div className="row">
-              <p className="title">Utca/házszám:</p>
-              <p>{buyerData?.street}</p>
-            </div>
-            <div className="row">
-              <p className="title">Kézbesítés módja:</p>
-              <p>
-                {buyerData?.delivery === "személyes" && "Személyes"}
-                {buyerData?.delivery === "posta" && "Postai"}
-              </p>
-            </div>
-          </div>
-          <div className="service">
-            <div className="row">
-               
-
-              <p>{service?.name} </p>
-            </div>
-            <div className="row">
-              
-              <p>
-                {service?.price} {service?.price && "Forint"}
-              </p>
-            </div>
-          </div>
-
-          <button
-            className="orderBtn"
-            onClick={() => {
-              sendConfirmEmail(buyerData);
-            }}
-          >
-            Megrendelés
-          </button>
-        </StyledOrderData>}
-         {step === 2 && (
-          <StyledFinishBuy> 
+            <button
+              className="orderBtn"
+              onClick={() => {
+                sendConfirmEmail(buyerData);
+              }}
+            >
+              Megrendelés
+            </button>
+          </StyledOrderData>
+        )}
+        {step === 2 && (
+          <StyledFinishBuy>
             <div className="textWrapper">
-
-                <h1>Köszönjük a megrendelésed!</h1>
-            <p>
-              A megerősítő emailt elküldtük az alábbi email címre:
-              <br />
-              {buyerData.email}
-              
-            </p>
+              <h1>Köszönjük a megrendelésed!</h1>
+              <p>
+                A megerősítő emailt elküldtük az alábbi email címre:
+                <br />
+                {buyerData.email}
+              </p>
             </div>
-          
           </StyledFinishBuy>
         )}
       </StyledGiftCardMain>
