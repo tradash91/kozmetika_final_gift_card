@@ -82,10 +82,17 @@ function GiftCard() {
     <>
       <Navbar />
       <StyledGiftCardMain>
-        <p>Vásárolj egy szolgáltatást és ad át szerettednek ajándékba.</p>
+        {/* <p>Válasz ki a listából, hogy melyik szolgáltatást szeretnéd ajándékba adni.</p> */}
         {step === 1 && (
           <StyledCardWrapper className="">
             <StyledData>
+            <h1>Vásárolj egy szolgáltatást és add át a szerettednek ajándékba.</h1>
+         <ul>
+          <li>1. Válasz ki a listából, hogy melyik szolgáltatást szeretnéd ajándékba adni.</li>
+          <li>2. Add meg az adataidat és kattints a "Megrendelés" gombra.</li>
+          <li>3. Erősítsd meg a megrendelést az emailben kapott linken keresztül.</li>
+          <li>4. Utald át az emailben feltüntetett összeget a feltüntetett számlaszámra.</li>
+          </ul>
               <h3>Szolgáltatás</h3>
 
               {error?.message && buyerData.service === "" && (
@@ -226,7 +233,7 @@ function GiftCard() {
                     onChange={(e) => {
                       setBuyerData({ ...buyerData, street: e.target.value });
                     }}
-                    type="number"
+                    type="text"
                     placeholder="Utca / házszám"
                   />
                 </form>

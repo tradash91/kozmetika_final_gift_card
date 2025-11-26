@@ -17,7 +17,7 @@ export const StyledCardWrapper = styled.div`
   gap: 2rem;
   font-family: "montserrat", Reddit Sans;
   padding: 0 5rem;
-  height: 800px;
+ 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
     height: auto;
@@ -36,6 +36,10 @@ export const StyledData = styled.div`
   gap: 1rem;
   align-items: start;
   font-size: 17px;
+  ul {
+    background-color: var(--brown);
+    padding: 1rem;
+  }
   h3 {
     font-weight: 500;
   }

@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   gap: 3rem;
   padding: 5rem 0;
   width: 100%;
-  margin-top: 5rem;
+  
   span {
     ${mont_12_regular}
   }

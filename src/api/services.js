@@ -1,3 +1,4 @@
+
 import { supabase } from "../utils/supabase";
 
 export async function getServices() {
@@ -33,8 +34,9 @@ export async function getServices() {
   const filteredData = data.map((cat) => ({
     ...cat,
     sub_categories: cat.sub_categories.filter((sub) => sub.isActive),
-  }));
-
+  })).sort((a,b)=> a.num - b.num);
+  
+  
   return filteredData;
 }
 

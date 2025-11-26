@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import {
   cormorant_20_semiBold,
+  flex,
   mont_12_regular,
   mont_13_lightItalic,
   mont_16_regular,
@@ -17,14 +18,16 @@ const StyledBlogSection = styled.section`
   padding: 0 5rem;
   width: 100%;
   height: 500px;
-
+  padding-bottom: 3rem;
   @media (max-width: 600px) {
-    padding: 0rem 1rem;
+    padding: 0 1rem 3rem 1rem;
   }
 `;
 const BlogPost = styled(SwiperSlide)`
-  /* min-height: 350px; */
-
+  ${flex('column')}
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
   width: 100%;
   height: 100%;
   background-color: var(--brown);
@@ -33,6 +36,7 @@ const BlogPost = styled(SwiperSlide)`
   flex-grow: 1;
   word-wrap: break-word;
   overflow-y: auto;
+  
   span {
     ${mont_13_lightItalic}
   }
